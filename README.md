@@ -1,4 +1,3 @@
-Fórum
 Este é um projeto de fórum desenvolvido com Spring Boot e Spring Security. O projeto permite aos usuários realizar login, criar postagens e visualizar tópicos no fórum.
 
 Funcionalidades
