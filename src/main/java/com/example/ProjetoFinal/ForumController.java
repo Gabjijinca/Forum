@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5174")
 @RequestMapping("/forum")
 public class ForumController {
 
@@ -25,7 +26,7 @@ public class ForumController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getTopicById(@PathVariable Long id) {
         Optional<DetailedTopicDTO> topic = forumService.findTopicById(id);
-        System.out.println("Tópico encontrado: " + topic);  // Para depuração
+        System.out.println("Tópico encontrado: " + topic);
         if (topic.isPresent()) {
             return ResponseEntity.ok(topic.get());
         } else {

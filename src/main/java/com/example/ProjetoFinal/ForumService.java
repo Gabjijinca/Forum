@@ -34,7 +34,6 @@ public class ForumService {
         );
     }
 
-    // POST criar um novo tópico
     public DetailedTopicDTO createTopic(CreateTopicDTO createTopicDTO) {
         Forum forum = new Forum(
                 createTopicDTO.titulo(),
@@ -54,7 +53,6 @@ public class ForumService {
         );
     }
 
-    // PUT atualizar um tópico por ID
     public Optional<DetailedTopicDTO> updateTopic(Long id, UpdateTopicDTO updateTopicDTO) {
         return forumRepository.findById(id).map(existingTopic -> {
             existingTopic.setTitulo(updateTopicDTO.titulo());
@@ -72,7 +70,6 @@ public class ForumService {
         });
     }
 
-    // DELETE remover um tópico por ID
     public boolean deleteTopic(Long id) {
         if (forumRepository.existsById(id)) {
             forumRepository.deleteById(id);
